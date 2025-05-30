@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+
+.auth-container {
+  max-width: 400px;
+  margin: 5rem auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-heading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.auth-button:hover {
+  background-color: #1e40af;
+}
+
+.auth-toggle {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.auth-link {
+  background: none;
+  border: none;
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+
+
+.todo-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+}
+
+.todo-button {
+  padding: 0.5rem;
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.todo-button:hover {
+  background-color: #15803d;
+}
+
+
+
+
+.todo-wrapper {
+  max-width: 400px;
+  margin: 2.5rem auto;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+}
+
+.todo-item + .todo-item {
+  margin-top: 0.5rem;
+}
+
+.todo-item-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.todo-completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-remove {
+  background: none;
+  border: none;
+  color: #dc2626;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.todo-edit {
+  background: none;
+  border: none;
+  margin-left: 0.5rem;
+  color: #555;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.todo-edit:hover {
+  color: #000;
+}
+
+.todo-item-left input[type="text"] {
+  padding: 4px;
+  font-size: 1rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-edit-input {
+  padding: 4px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  width: 150px;
+}
+
+.todo-save,
+.todo-cancel {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 0.25rem;
+}
+
+.todo-save:hover {
+  color: green;
+}
+
+.todo-cancel:hover {
+  color: red;
+}
+
+/* Fade-slide in for edit controls */
+.todo-item-left input[type="text"],
+.todo-save,
+.todo-cancel {
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.todo-item-left.editing input[type="text"],
+.todo-item-left.editing .todo-save,
+.todo-item-left.editing .todo-cancel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
